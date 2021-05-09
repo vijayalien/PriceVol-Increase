@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="118043" started-at="2021-04-20T12:17:47 IST" finished-at="2021-04-20T12:19:45 IST">
+  <suite name="Default suite" duration-ms="15188" started-at="2021-05-03T13:10:58 IST" finished-at="2021-05-03T13:11:13 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="118043" started-at="2021-04-20T12:17:47 IST" finished-at="2021-04-20T12:19:45 IST">
-      <class name="com.moneycontrol.test.Scenario">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:com.moneycontrol.test.Scenario@7a3d45bd]" name="initialize" is-config="true" duration-ms="64012" started-at="2021-04-20T12:17:47 IST" finished-at="2021-04-20T12:18:51 IST">
+    <test name="Default test" duration-ms="15188" started-at="2021-05-03T13:10:58 IST" finished-at="2021-05-03T13:11:13 IST">
+      <class name="com.moneycontrol.test.Trendlynetest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.moneycontrol.test.Trendlynetest@27f723]" name="initialize" is-config="true" duration-ms="14876" started-at="2021-05-03T13:10:58 IST" finished-at="2021-05-03T13:11:13 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="validateHomepage()[pri:0, instance:com.moneycontrol.test.Scenario@7a3d45bd]" name="validateHomepage" duration-ms="152" started-at="2021-04-20T12:18:51 IST" finished-at="2021-04-20T12:18:51 IST">
+        <test-method status="PASS" signature="validateHomepage()[pri:0, instance:com.moneycontrol.test.Trendlynetest@27f723]" name="validateHomepage" duration-ms="232" started-at="2021-05-03T13:11:13 IST" finished-at="2021-05-03T13:11:13 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateHomepage -->
-        <test-method status="PASS" signature="validateAllstatpage()[pri:1, instance:com.moneycontrol.test.Scenario@7a3d45bd]" name="validateAllstatpage" duration-ms="31449" started-at="2021-04-20T12:18:51 IST" finished-at="2021-04-20T12:19:22 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateAllstatpage -->
-        <test-method status="PASS" signature="extractData()[pri:2, instance:com.moneycontrol.test.Scenario@7a3d45bd]" name="extractData" duration-ms="22350" started-at="2021-04-20T12:19:22 IST" finished-at="2021-04-20T12:19:45 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- extractData -->
-      </class> <!-- com.moneycontrol.test.Scenario -->
+      </class> <!-- com.moneycontrol.test.Trendlynetest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -7,6 +7,9 @@ import java.sql.Driver;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.LoggerConfig;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.rules.Timeout;
 import org.openqa.selenium.By;
@@ -25,6 +28,8 @@ public class Scenario extends Baseinitialize {
 	
 	public static Homepage hp;
 	
+	 public static Logger log = LogManager.getLogger(Scenario.class.getName());
+	
 	@BeforeTest
 	public static void initialize() {
 		
@@ -36,6 +41,7 @@ public class Scenario extends Baseinitialize {
 			
 			e.printStackTrace();
 		}
+		log.info("This is infor message after Initialize method");
 	}
 	
 	//To validate the moneycontrol homepage is loaded
@@ -44,7 +50,8 @@ public class Scenario extends Baseinitialize {
 		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		Assert.assertEquals(hp.validateFPtitle().isDisplayed(),true);
-				
+		
+		log.trace("This is trace message after validateHomepage");
 	}
 	
 	//To click on all stats button and validate the same
@@ -58,6 +65,8 @@ public class Scenario extends Baseinitialize {
 		hp.pvIncrease().click();
 		hp.selectDate().click();
 		Assert.assertEquals(hp.lpTitle().isDisplayed(), true);
+		
+		log.error("This is error message after validatestat method");
 	}
 	
 	//To fetch data and extract into excel
@@ -91,6 +100,8 @@ public class Scenario extends Baseinitialize {
 		  mexcel.createExcel("moneycontrol", 0, 5, "Change");
 		  mexcel.createExcel("moneycontrol", 0, 6, "%Change");
 		  mexcel.createExcel("moneycontrol", 0, 7, "Volumes");
+		  
+		  log.fatal("fatal message after excel column creation");
 		 
 		  //to fetch data from 1 body or table 
 		  for(int i=2;i<=rows-1;i++) {
@@ -125,7 +136,7 @@ public class Scenario extends Baseinitialize {
 			  mexcel.createExcel("moneycontrol",j,6,secndpercentchange);
 			  mexcel.createExcel("moneycontrol",j,7,secndVolumes);
 			  
-			  
+			  log.info("Final info message after moneycontrol test successfully done");
 		  }
 		
 	}
