@@ -23,10 +23,10 @@ public class Baseinitialize {
 	public static String proppath=System.getProperty("user.dir")+"\\src\\main\\java\\com\\moneycontrol\\resource\\Resource.properties";
 
 
-	public static WebDriver Initializedriver() throws IOException {
+	public static WebDriver Initializedriver(String url) throws IOException {
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\vijay\\Desktop\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get(getProperties("Url"));
+		driver.get(getProperties(url));
 		driver.manage().window().maximize();
 		return driver;
 
@@ -44,8 +44,6 @@ public class Baseinitialize {
 
 	}
 	
-
-
 
 	 public String getdatetime() {
 		 try {

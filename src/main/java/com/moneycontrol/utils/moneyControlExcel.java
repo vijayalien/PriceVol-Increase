@@ -42,7 +42,7 @@ public class moneyControlExcel extends Baseinitialize{
 		this.driver=driver;
 	}
 	
-	public static void createExcel(String sheetname,int rownum,int colNum,String value) throws IOException, InvalidFormatException {
+	public  void createExcel(String sheetname,int rownum,int colNum,String value) throws IOException, InvalidFormatException {
 	
 	File file= new File(path);	
 	if(!file.exists()) {
