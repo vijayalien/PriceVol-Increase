@@ -35,7 +35,7 @@ public class Scenario extends Baseinitialize {
 		
 		try {
 			
-			driver= Baseinitialize.Initializedriver();
+			driver= Baseinitialize.Initializedriver("Url");
 			hp= new Homepage(driver);
 		} catch (IOException e) {
 			
@@ -80,18 +80,6 @@ public class Scenario extends Baseinitialize {
 		int rows=table.findElements(By.xpath("tr")).size();
 		System.out.println(rows);
 		
-				////table[@id='cnstv-gainer-up']/tbody/tr[2]
-		////table[@id='cnstv-gainer-up']/tbody/tr/td[1]
-		
-		/*
-		 * for(int i=1;i<=rows;i++) { for(int j=0;j<=rows-1;j++) { String
-		 * columnElement=table.findElement(By.xpath("tr/th["+i+"]")).getText();
-		 * mexcel.createExcel("moneycontrol",0,j,columnElement);
-		 * System.out.println(columnElement); break; }
-		 * 
-		 * }
-		 */
-	
 		  mexcel.createExcel("moneycontrol",0,0,"Company");
 		  mexcel.createExcel("moneycontrol",0,1,"Price");
 		  mexcel.createExcel("moneycontrol",0,2,"Change");

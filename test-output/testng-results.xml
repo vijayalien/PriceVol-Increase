@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15188" started-at="2021-05-03T13:10:58 IST" finished-at="2021-05-03T13:11:13 IST">
+  <suite name="Default suite" duration-ms="43816" started-at="2021-08-22T16:52:36 IST" finished-at="2021-08-22T16:53:20 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15188" started-at="2021-05-03T13:10:58 IST" finished-at="2021-05-03T13:11:13 IST">
-      <class name="com.moneycontrol.test.Trendlynetest">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:com.moneycontrol.test.Trendlynetest@27f723]" name="initialize" is-config="true" duration-ms="14876" started-at="2021-05-03T13:10:58 IST" finished-at="2021-05-03T13:11:13 IST">
+    <test name="Default test" duration-ms="43816" started-at="2021-08-22T16:52:36 IST" finished-at="2021-08-22T16:53:20 IST">
+      <class name="com.trendlyn.test.Trendlynetest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.trendlyn.test.Trendlynetest@222a59e6]" name="initialize" is-config="true" duration-ms="16179" started-at="2021-08-22T16:52:36 IST" finished-at="2021-08-22T16:52:52 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="validateHomepage()[pri:0, instance:com.moneycontrol.test.Trendlynetest@27f723]" name="validateHomepage" duration-ms="232" started-at="2021-05-03T13:11:13 IST" finished-at="2021-05-03T13:11:13 IST">
+        <test-method status="PASS" signature="validateHomepage()[pri:0, instance:com.trendlyn.test.Trendlynetest@222a59e6]" name="validateHomepage" duration-ms="319" started-at="2021-08-22T16:52:52 IST" finished-at="2021-08-22T16:52:52 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateHomepage -->
-      </class> <!-- com.moneycontrol.test.Trendlynetest -->
+        <test-method status="PASS" signature="market()[pri:1, instance:com.trendlyn.test.Trendlynetest@222a59e6]" name="market" duration-ms="5829" started-at="2021-08-22T16:52:52 IST" finished-at="2021-08-22T16:52:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- market -->
+        <test-method status="PASS" signature="exportData()[pri:2, instance:com.trendlyn.test.Trendlynetest@222a59e6]" name="exportData" duration-ms="21391" started-at="2021-08-22T16:52:58 IST" finished-at="2021-08-22T16:53:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exportData -->
+      </class> <!-- com.trendlyn.test.Trendlynetest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
