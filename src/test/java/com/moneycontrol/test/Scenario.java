@@ -1,5 +1,7 @@
 package com.moneycontrol.test;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
@@ -49,7 +51,7 @@ public class Scenario extends Baseinitialize {
 	public void validateHomepage() {
 		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		Assert.assertEquals(hp.validateFPtitle().isDisplayed(),true);
+		AssertJUnit.assertEquals(hp.validateFPtitle().isDisplayed(),true);
 		
 		log.trace("This is trace message after validateHomepage");
 	}
@@ -61,10 +63,10 @@ public class Scenario extends Baseinitialize {
 		
 		hp.allStat().click();
 		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-		Assert.assertEquals(hp.statpage().isDisplayed(), true);
+		AssertJUnit.assertEquals(hp.statpage().isDisplayed(), true);
 		hp.pvIncrease().click();
 		hp.selectDate().click();
-		Assert.assertEquals(hp.lpTitle().isDisplayed(), true);
+		AssertJUnit.assertEquals(hp.lpTitle().isDisplayed(), true);
 		
 		log.error("This is error message after validatestat method");
 	}
@@ -128,5 +130,6 @@ public class Scenario extends Baseinitialize {
 		  }
 		
 	}
+	
 	
 }

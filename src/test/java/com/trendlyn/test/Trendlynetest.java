@@ -1,5 +1,7 @@
 package com.trendlyn.test;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
@@ -9,8 +11,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.tools.ant.taskdefs.WaitFor.Unit;
+import org.awaitility.Awaitility;
+import org.hamcrest.core.Is;
 import org.junit.rules.Timeout;
-import org.omg.CORBA.TIMEOUT;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,6 +30,8 @@ import com.moneycontrol.utils.Baseinitialize;
 import com.moneycontrol.utils.CommonActions;
 import com.moneycontrol.utils.Logcheck;
 import com.moneycontrol.utils.moneyControlExcel;
+
+import jdk.internal.org.jline.utils.Log;
 
 public class Trendlynetest {
 
@@ -54,7 +59,7 @@ public class Trendlynetest {
 	public static void validateHomepage() {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//span[contains(text(),'×')]")).click();
-		Assert.assertEquals(trendlyne.trendlyne().isDisplayed(), true);
+		AssertJUnit.assertEquals(trendlyne.trendlyne().isDisplayed(), true);
 
 	}
 
@@ -62,10 +67,14 @@ public class Trendlynetest {
 	public static void market() {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		commonActions.mouseHoverAction(trendlyne.markets());
-		trendlyne.marketsTod().click();
-		Assert.assertEquals(trendlyne.highVolgain().isDisplayed(), true);
+		//trendlyne.marketsTod().click();
+
+		Awaitility.await().pollInterval(5, TimeUnit.SECONDS).timeout(20, TimeUnit.SECONDS).untilAsserted(() -> 
+			Assert.assertEquals(trendlyne.highVolgain().isDisplayed(), true)
+			);
 
 		trendlyne.highVolgain().click();
+		log.info("After clicking high volume High gain page");
 		Select sel = new Select(trendlyne.selectval());
 		sel.selectByValue("100");
 
@@ -89,15 +98,15 @@ public class Trendlynetest {
 			//// table[@id='DataTables_Table_0']
 
 			for (int i = 1; i <= trendlyne.table().size();) {
-				mexcel.createExcel("moneycontrol", i, 0, driver
+				mexcel.createExcel("trendlyn", i, 0, driver
 						.findElement(By.xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + i + "]/td[1]")).getText());
-				mexcel.createExcel("moneycontrol", i, 1, driver
+				mexcel.createExcel("trendlyn", i, 1, driver
 						.findElement(By.xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + i + "]/td[2]")).getText());
-				mexcel.createExcel("moneycontrol", i, 2, driver
+				mexcel.createExcel("trendlyn", i, 2, driver
 						.findElement(By.xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + i + "]/td[3]")).getText());
-				mexcel.createExcel("moneycontrol", i, 3, driver
+				mexcel.createExcel("trendlyn", i, 3, driver
 						.findElement(By.xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + i + "]/td[4]")).getText());
-				mexcel.createExcel("moneycontrol", i, 4, driver
+				mexcel.createExcel("trendlyn", i, 4, driver
 						.findElement(By.xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + i + "]/td[5]")).getText());
 				i++;
 			}

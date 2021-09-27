@@ -24,7 +24,7 @@ public class Baseinitialize {
 
 
 	public static WebDriver Initializedriver(String url) throws IOException {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\vijay\\Desktop\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\ChromeDriver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(getProperties(url));
 		driver.manage().window().maximize();
@@ -56,8 +56,6 @@ public class Baseinitialize {
 				ex.printStackTrace();
 			} return null;
 		}
-
-
 
 }
 
