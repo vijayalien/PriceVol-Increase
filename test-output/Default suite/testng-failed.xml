@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.trendlyn.test.Trendlynetest">
+      <class name="com.moneycontrol.test.Scenario">
         <methods>
+          <include name="extractData"/>
+          <include name="validateAllstatpage"/>
           <include name="initialize"/>
-          <include name="market"/>
         </methods>
-      </class> <!-- com.trendlyn.test.Trendlynetest -->
+      </class> <!-- com.moneycontrol.test.Scenario -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

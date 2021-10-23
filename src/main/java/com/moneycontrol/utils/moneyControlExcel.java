@@ -33,11 +33,8 @@ public class moneyControlExcel extends Baseinitialize{
 	
 	
 	
-	public static String path=System.getProperty("user.dir")+"\\Reports\\test.xlsx";
-	
-
-	
-	
+	public static String path=System.getProperty("user.dir")+"\\Reports\\Reports"+CommonActions.getdatetime()+".xlsx";
+		
 	public  moneyControlExcel(WebDriver driver) throws IOException {
 		this.driver=driver;
 	}

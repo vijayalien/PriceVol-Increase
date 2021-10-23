@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-09-19T19:49:19 IST" name="Default suite" finished-at="2021-09-19T19:50:14 IST" duration-ms="55172">
+  <suite started-at="2021-10-23T13:14:37 IST" name="Trendlyn Suite" finished-at="2021-10-23T13:15:26 IST" duration-ms="48522">
     <groups>
     </groups>
-    <test started-at="2021-09-19T19:49:19 IST" name="Default test" finished-at="2021-09-19T19:50:14 IST" duration-ms="55172">
-      <class name="com.trendlyn.test.Trendlynetest">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.trendlyn.test.Trendlynetest@5974109]" started-at="2021-09-19T19:49:19 IST" name="initialize" finished-at="2021-09-19T19:49:24 IST" duration-ms="4971" status="PASS">
+    <test started-at="2021-10-23T13:14:37 IST" name="Test" finished-at="2021-10-23T13:15:26 IST" duration-ms="48522">
+      <class name="com.trendlyn.test.OversoldStocks">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.trendlyn.test.OversoldStocks@47db5fa5]" started-at="2021-10-23T13:14:37 IST" name="initialize" finished-at="2021-10-23T13:14:44 IST" duration-ms="6567" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="validateHomepage()[pri:0, instance:com.trendlyn.test.Trendlynetest@5974109]" started-at="2021-09-19T19:49:24 IST" name="validateHomepage" finished-at="2021-09-19T19:49:24 IST" duration-ms="327" status="PASS">
+        <test-method signature="getLargeCapOversoldStocks()[pri:0, instance:com.trendlyn.test.OversoldStocks@47db5fa5]" started-at="2021-10-23T13:15:15 IST" name="getLargeCapOversoldStocks" finished-at="2021-10-23T13:15:26 IST" duration-ms="11392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getLargeCapOversoldStocks -->
+      </class> <!-- com.trendlyn.test.OversoldStocks -->
+      <class name="com.trendlyn.test.Trendlynetest">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.trendlyn.test.Trendlynetest@4879f0f2]" started-at="2021-10-23T13:14:44 IST" name="initialize" finished-at="2021-10-23T13:14:49 IST" duration-ms="5111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method signature="validateHomepage()[pri:0, instance:com.trendlyn.test.Trendlynetest@4879f0f2]" started-at="2021-10-23T13:14:49 IST" name="validateHomepage" finished-at="2021-10-23T13:14:50 IST" duration-ms="280" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateHomepage -->
-        <test-method signature="market()[pri:1, instance:com.trendlyn.test.Trendlynetest@5974109]" started-at="2021-09-19T19:49:24 IST" name="market" finished-at="2021-09-19T19:49:34 IST" duration-ms="9309" status="PASS">
+        <test-method signature="market()[pri:1, instance:com.trendlyn.test.Trendlynetest@4879f0f2]" started-at="2021-10-23T13:14:50 IST" name="market" finished-at="2021-10-23T13:14:59 IST" duration-ms="9050" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- market -->
-        <test-method signature="exportData()[pri:2, instance:com.trendlyn.test.Trendlynetest@5974109]" started-at="2021-09-19T19:49:34 IST" name="exportData" finished-at="2021-09-19T19:50:14 IST" duration-ms="40498" status="PASS">
+        <test-method signature="exportData()[pri:2, instance:com.trendlyn.test.Trendlynetest@4879f0f2]" started-at="2021-10-23T13:14:59 IST" name="exportData" finished-at="2021-10-23T13:15:15 IST" duration-ms="16021" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exportData -->
       </class> <!-- com.trendlyn.test.Trendlynetest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Trendlyn Suite -->
 </testng-results>

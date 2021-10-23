@@ -62,7 +62,7 @@ public class Scenario extends Baseinitialize {
 		
 		
 		hp.allStat().click();
-		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		AssertJUnit.assertEquals(hp.statpage().isDisplayed(), true);
 		hp.pvIncrease().click();
 		hp.selectDate().click();
@@ -82,14 +82,14 @@ public class Scenario extends Baseinitialize {
 		int rows=table.findElements(By.xpath("tr")).size();
 		System.out.println(rows);
 		
-		  mexcel.createExcel("moneycontrol",0,0,"Company");
-		  mexcel.createExcel("moneycontrol",0,1,"Price");
-		  mexcel.createExcel("moneycontrol",0,2,"Change");
-		  mexcel.createExcel("moneycontrol",0,3,"%Change");
-		  mexcel.createExcel("moneycontrol",0,4,"Price");
-		  mexcel.createExcel("moneycontrol", 0, 5, "Change");
-		  mexcel.createExcel("moneycontrol", 0, 6, "%Change");
-		  mexcel.createExcel("moneycontrol", 0, 7, "Volumes");
+		  mexcel.createExcel("Moneycontrol",0,0,"Company");
+		  mexcel.createExcel("Moneycontrol",0,1,"Price");
+		  mexcel.createExcel("Moneycontrol",0,2,"Change");
+		  mexcel.createExcel("Moneycontrol",0,3,"%Change");
+		  mexcel.createExcel("Moneycontrol",0,4,"Price");
+		  mexcel.createExcel("Moneycontrol", 0, 5, "Change");
+		  mexcel.createExcel("Moneycontrol", 0, 6, "%Change");
+		  mexcel.createExcel("Moneycontrol", 0, 7, "Volumes");
 		  
 		  log.fatal("fatal message after excel column creation");
 		 
@@ -100,10 +100,10 @@ public class Scenario extends Baseinitialize {
 			  String change=table.findElement(By.xpath("tr["+i+"]/td[3]")).getText();
 			  String percentchange=table.findElement(By.xpath("tr["+i+"]/td[4]")).getText();
 			  
-			  mexcel.createExcel("moneycontrol",i,0,company);
-			  mexcel.createExcel("moneycontrol",i,1,price);
-			  mexcel.createExcel("moneycontrol",i,2,change);
-			  mexcel.createExcel("moneycontrol",i,3,percentchange);
+			  mexcel.createExcel("Moneycontrol",i,0,company);
+			  mexcel.createExcel("Moneycontrol",i,1,price);
+			  mexcel.createExcel("Moneycontrol",i,2,change);
+			  mexcel.createExcel("Moneycontrol",i,3,percentchange);
 			  
 		  }
 		  
@@ -121,10 +121,10 @@ public class Scenario extends Baseinitialize {
 			  String secndpercentchange=table2.findElement(By.xpath("tr["+j+"]/td[3]")).getText();
 			  String secndVolumes=table2.findElement(By.xpath("tr["+j+"]/td[4]")).getText();
 			  
-			  mexcel.createExcel("moneycontrol",j,4,secndPrice);
-			  mexcel.createExcel("moneycontrol",j,5,secndChange);
-			  mexcel.createExcel("moneycontrol",j,6,secndpercentchange);
-			  mexcel.createExcel("moneycontrol",j,7,secndVolumes);
+			  mexcel.createExcel("Moneycontrol",j,4,secndPrice);
+			  mexcel.createExcel("Moneycontrol",j,5,secndChange);
+			  mexcel.createExcel("Moneycontrol",j,6,secndpercentchange);
+			  mexcel.createExcel("Moneycontrol",j,7,secndVolumes);
 			  
 			  log.info("Final info message after moneycontrol test successfully done");
 		  }

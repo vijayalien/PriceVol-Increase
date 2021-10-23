@@ -1,5 +1,9 @@
 package com.moneycontrol.utils;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -8,7 +12,8 @@ import org.openqa.selenium.interactions.Actions;
 
 public class CommonActions{
 	
-	public WebDriver driver;
+	public static  WebDriver driver;
+	public static String currentDate;
 	
 	public CommonActions(WebDriver driver) {
 		this.driver=driver;
@@ -25,6 +30,18 @@ public class CommonActions{
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 	}
-	
+
+	 public static String getdatetime() {
+		 try {
+				DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH-mm-ss");
+				Date date = Calendar.getInstance().getTime();
+				currentDate = dateFormat.format(date);
+				
+				return currentDate;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			} return null;
+		}
+
 		
 }

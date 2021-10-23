@@ -87,26 +87,28 @@ public class Trendlynetest {
 	@Test(priority = 2)
 	public static void exportData() throws IOException {
 
+		
 		moneyControlExcel mexcel = new moneyControlExcel(driver);
 		try {
-			mexcel.createExcel("trendlyn", 0, 0, "Name");
-			mexcel.createExcel("trendlyn", 0, 1, "LTP");
-			mexcel.createExcel("trendlyn", 0, 2, "Change %");
-			mexcel.createExcel("trendlyn", 0, 3, "Volume (day)");
-			mexcel.createExcel("trendlyn", 0, 4, "Avg volume (Week)");
+			mexcel.createExcel("Trendlyn", 0, 0, "Name");
+			mexcel.createExcel("Trendlyn", 0, 1, "LTP");
+			mexcel.createExcel("Trendlyn", 0, 2, "Change %");
+			mexcel.createExcel("Trendlyn", 0, 3, "Volume (day)");
+			mexcel.createExcel("Trendlyn", 0, 4, "Avg volume (Week)");
 
+			mexcel.createExcel("Trendlyn", 0, 6, "High Volume High Gain");
 			//// table[@id='DataTables_Table_0']
 
 			for (int i = 1; i <= trendlyne.table().size();) {
-				mexcel.createExcel("trendlyn", i, 0, driver
+				mexcel.createExcel("Trendlyn", i, 0, driver
 						.findElement(By.xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + i + "]/td[1]")).getText());
-				mexcel.createExcel("trendlyn", i, 1, driver
+				mexcel.createExcel("Trendlyn", i, 1, driver
 						.findElement(By.xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + i + "]/td[2]")).getText());
-				mexcel.createExcel("trendlyn", i, 2, driver
+				mexcel.createExcel("Trendlyn", i, 2, driver
 						.findElement(By.xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + i + "]/td[3]")).getText());
-				mexcel.createExcel("trendlyn", i, 3, driver
+				mexcel.createExcel("Trendlyn", i, 3, driver
 						.findElement(By.xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + i + "]/td[4]")).getText());
-				mexcel.createExcel("trendlyn", i, 4, driver
+				mexcel.createExcel("Trendlyn", i, 4, driver
 						.findElement(By.xpath("//*[@id='DataTables_Table_0']/tbody/tr[" + i + "]/td[5]")).getText());
 				i++;
 			}
