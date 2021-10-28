@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 public class CommonActions{
 	
@@ -42,6 +43,10 @@ public class CommonActions{
 				ex.printStackTrace();
 			} return null;
 		}
-
+	 
+	 public void selectValue(WebElement  element, String value) {
+		 Select sel = new Select(element);
+		 sel.selectByValue(value);
+	 }
 		
 }

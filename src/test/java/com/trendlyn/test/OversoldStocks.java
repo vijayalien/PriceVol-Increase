@@ -63,39 +63,132 @@ public class OversoldStocks extends Baseinitialize {
 			oversold.inputFilterValue().sendKeys("Large Cap");
 			oversold.inputFilterValue().sendKeys(Keys.ENTER);
 
-			Assert.assertEquals("Oversold by Relative Strength Index (RSI) in S&P BSE Largecap",oversold.getLargeCapHeader().getText().trim().toString());
-			
+			Assert.assertEquals("Oversold by Relative Strength Index (RSI) in S&P BSE Largecap",
+					oversold.getLargeCapHeader().getText().trim().toString());
+
+			commonActions.selectValue(oversold.selectTableSize(), "50");
+
 			wait.until(ExpectedConditions.visibilityOfAllElements(oversold.tableHead()));
-			
+
 			int i = 0;
 			for (WebElement header : oversold.tableHead()) {
 				System.out.println("header is :" + header.getText());
-				mexcel.createExcel("Oversold Stocks", 0, i, header.getText());
+				mexcel.createExcel("Oversold Large Cap", 0, i, header.getText());
 				i++;
 				log.info("Message: Header of the body is added to the excel sheet");
 			}
-			
 
-			////table[@id='DataTables_Table_0']/tbody/tr[2]/td
 			int rowSize = oversold.getTableRowSize().size();
-					
+
 			String firstPart = "//table[@id='DataTables_Table_0']/tbody/tr[";
-			String secondPart="]/td";
-			for(int a=1;a<=rowSize;) {
+			String secondPart = "]/td";
+			for (int a = 1; a <= rowSize;) {
 				int colSize = 0;
-				String finalPart = firstPart+a+secondPart;
-				for(WebElement row : driver.findElements(By.xpath(finalPart))) {
+				String finalPart = firstPart + a + secondPart;
+				for (WebElement row : driver.findElements(By.xpath(finalPart))) {
 					String rowDetails = row.getText();
 					System.out.println("The oversold stocks are : " + rowDetails);
-					mexcel.createExcel("Oversold Stocks", a, colSize, rowDetails);
+					mexcel.createExcel("Oversold Large Cap", a, colSize, rowDetails);
 					colSize++;
-				}a++;
-			log.info("Message: Oversold stocks are added to the excel sheet");
+				}
+				a++;
+				log.info("Message: Oversold stocks are added to the excel sheet");
 			}
-			
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
 
+	@Test
+	public static void getMidCapOversoldStocks() {
+		try {
+				
+			WebDriverWait wait = new WebDriverWait(driver, 30); 
+			
+			oversold.selectFilterBox().click();
+			oversold.inputFilterValue().sendKeys("Mid Caps");
+			oversold.inputFilterValue().sendKeys(Keys.ENTER);
+
+			Assert.assertEquals("Oversold by Relative Strength Index (RSI) in BSE Mid-Cap",oversold.getLargeCapHeader().getText().trim().toString());
+			
+			wait.until(ExpectedConditions.elementToBeClickable(oversold.selectTableSize()));
+			commonActions.selectValue(oversold.selectTableSize(), "50");
+			wait.until(ExpectedConditions.visibilityOfAllElements(oversold.tableHead()));
+
+			int i = 0;
+			for (WebElement header : oversold.tableHead()) {
+				System.out.println("header is :" + header.getText());
+				mexcel.createExcel("Oversold Mid Cap", 0, i, header.getText());
+				i++;
+				log.info("Message: Header of the body is added to the excel sheet");
+			}
+
+			int rowSize = oversold.getTableRowSize().size();
+
+			String firstPart = "//table[@id='DataTables_Table_0']/tbody/tr[";
+			String secondPart = "]/td";
+			for (int a = 1; a <= rowSize;) {
+				int colSize = 0;
+				String finalPart = firstPart + a + secondPart;
+				for (WebElement row : driver.findElements(By.xpath(finalPart))) {
+					String rowDetails = row.getText();
+					System.out.println("The oversold stocks are : " + rowDetails);
+					mexcel.createExcel("Oversold Mid Cap", a, colSize, rowDetails);
+					colSize++;
+				}
+				a++;
+				log.info("Message: Oversold stocks are added to the excel sheet");
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	@Test
+	public static void getNiftySmallCapOversoldStocks() {
+		try {
+				
+			WebDriverWait wait = new WebDriverWait(driver, 30); 
+			
+			oversold.selectFilterBox().click();
+			oversold.inputFilterValue().sendKeys("Nifty small cap");
+			oversold.inputFilterValue().sendKeys(Keys.ENTER);
+
+			Assert.assertEquals("Oversold by Relative Strength Index (RSI) in Nifty Smallcap 100",oversold.getLargeCapHeader().getText().trim().toString());
+			
+			wait.until(ExpectedConditions.elementToBeClickable(oversold.selectTableSize()));
+			commonActions.selectValue(oversold.selectTableSize(), "50");
+			wait.until(ExpectedConditions.visibilityOfAllElements(oversold.tableHead()));
+
+			int i = 0;
+			for (WebElement header : oversold.tableHead()) {
+				System.out.println("header is :" + header.getText());
+				mexcel.createExcel("Oversold SmallCap", 0, i, header.getText());
+				i++;
+				log.info("Message: Header of the body is added to the excel sheet");
+			}
+
+			int rowSize = oversold.getTableRowSize().size();
+
+			String firstPart = "//table[@id='DataTables_Table_0']/tbody/tr[";
+			String secondPart = "]/td";
+			for (int a = 1; a <= rowSize;) {
+				int colSize = 0;
+				String finalPart = firstPart + a + secondPart;
+				for (WebElement row : driver.findElements(By.xpath(finalPart))) {
+					String rowDetails = row.getText();
+					System.out.println("The oversold stocks are : " + rowDetails);
+					mexcel.createExcel("Oversold SmallCap", a, colSize, rowDetails);
+					colSize++;
+				}
+				a++;
+				log.info("Message: Oversold stocks are added to the excel sheet");
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 }

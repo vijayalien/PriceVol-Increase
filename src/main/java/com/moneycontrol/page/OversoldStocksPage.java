@@ -19,6 +19,7 @@ public class OversoldStocksPage {
 	private By largeCapHeader = By.xpath("//div[@class='bbdr m-b-1']/h3");
 	private By tableHeader =By.xpath("//table[@id='DataTables_Table_0']/thead/tr/th");
 	private By tableRowSize = By.xpath("//table[@id='DataTables_Table_0']/tbody/tr");
+	private By selectTableSize = By.xpath("//select[@name='DataTables_Table_0_length']");
 
 	public OversoldStocksPage(WebDriver driver) {
 		this.driver = driver;
@@ -58,5 +59,9 @@ public class OversoldStocksPage {
 	
 	public List<WebElement> getTableRowSize() {
 		return driver.findElements(tableRowSize);
+	}
+	
+	public WebElement selectTableSize() {
+		return driver.findElement(selectTableSize);
 	}
 }
